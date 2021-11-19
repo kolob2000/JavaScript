@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework</title>
+    <meta charset="UTF-8">
+    <title>Homework</title>
 </head>
 <body>
 <!--
@@ -26,9 +26,17 @@
 Уточнение: пользователь всегда вводит корректное положительное число.
 -->
 <script>
-  "use strict";
+    "use strict";
+    let userNumber = prompt('Input integer number - ');
+    let number = userNumber;
+    let units = number % 10;
+    number = parseInt(number / 10);
+    let dozens = number % 10;
+    number = parseInt(number / 10);
+    let hundreds = number % 10;
+    number = parseInt(number / 10);
+    alert(`В числе ${userNumber} количество сотен: ${hundreds}, десятков: ${dozens}, единиц: ${units}`);
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
 </script>
 </body>
 </html>
