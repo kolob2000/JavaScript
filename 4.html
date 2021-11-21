@@ -31,6 +31,50 @@
 <script>
     "use strict";
 
+    /**
+     * Сумма чисел
+     *
+     * @param first
+     * @param second
+     * @returns {number}
+     */
+    function sum(first, second) {
+        return first + second;
+    }
+
+    /**
+     * Разность чисел
+     *
+     * @param first
+     * @param second
+     * @returns {number}
+     */
+    function sub(first, second) {
+        return first - second;
+    }
+
+    /**
+     * Произведение чисел
+     *
+     * @param first
+     * @param second
+     * @returns {number}
+     */
+    function mul(first, second) {
+        return first * second;
+    }
+
+    /**
+     * Деление чисел
+     *
+     * @param first
+     * @param second
+     * @returns {string|number}
+     */
+    function div(first, second) {
+        if (second === 0) return 'На ноль делить нельзя!';
+        return first / second;
+    }
 
     /**
      * Возведение числа в степень
@@ -48,6 +92,10 @@
         return result;
     }
 
+    console.log(sum(2, 8))
+    console.log(sub(2, 8))
+    console.log(mul(2, 8))
+    console.log(div(2, 8))
     console.log(pow(2, 8))
 
 </script>
