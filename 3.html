@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework</title>
+    <meta charset="UTF-8">
+    <title>Homework</title>
 </head>
 <body>
 <!--
@@ -29,9 +29,33 @@
 можно прочитать как "от нуля до 999 включительно".
 -->
 <script>
-  "use strict";
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+    function ListObject(hundreds, dozens, units) {
+        this.hundreds = hundreds;
+        this.dozens = dozens;
+        this.units = units;
+    }
+
+    const getDigitsOfNumber = (number) => {
+
+
+        if (isNaN(number) || number === '' || number < 0 || number > 999) {
+            console.error('Incorrect value!')
+            return Object;
+        } else if (number == 0) {
+            const obj = new ListObject(0, 0, 0);
+            return obj;
+        } else {
+            const obj = new ListObject(parseInt(number / 100), parseInt(number / 10), parseInt(number));
+            return obj;
+        }
+
+    }
+    console.log(getDigitsOfNumber('a'));
+    console.log(getDigitsOfNumber(333));
+    console.log(getDigitsOfNumber(0));
+
 </script>
 </body>
 </html>
