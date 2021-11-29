@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Homework</title>
+    <meta charset="UTF-8">
+    <title>Homework</title>
 </head>
 <body>
 <!--
@@ -48,9 +48,78 @@
 4. Если непонятно условие - задайте вопрос.
 -->
 <script>
-  "use strict";
+    "use strict";
 
-  // Здесь пишем решение, данный комментарий необходимо стереть.
+    // ECMAScript5
+    function PostES5(author, text) {
+        const now = Date();
+        this.author = author;
+        this.text = text;
+        this.date = now;
+    }
+
+    PostES5.prototype.edit = function (text) {
+        const now = Date();
+        this.text = text;
+        this.date = now;
+    }
+
+    const postES5 = new PostES5('Boba', 'Lorem ipsum dolor sit amet');
+    console.log(postES5);
+    postES5.edit(' dolor sit amet');
+    console.log(postES5);
+
+    function AttachedPostES5(author, text) {
+        this.highlighted = false;
+        PostES5.call(this, author, text);
+    }
+
+    AttachedPostES5.prototype = Object.create(PostES5.prototype);
+    AttachedPostES5.prototype.constructor = AttachedPostES5;
+
+    AttachedPostES5.prototype.makeTextHighlighted = function () {
+        this.highlighted = true;
+    }
+
+    const attachedPostES5 = new AttachedPostES5('Biba', 'Lorem ipsum dolor sit amet')
+    attachedPostES5.makeTextHighlighted()
+    console.log(attachedPostES5)
+
+
+    // ECMAScript6
+
+    class PostES6 {
+        constructor(author, text) {
+            const now = Date();
+            this.author = author;
+            this.text = text;
+            this.date = now;
+        }
+
+        edit(text) {
+            const now = Date();
+            this.text = text;
+            this.date = now;
+        }
+    }
+
+    const postES6 = new PostES6('Bob', 'Lorem ipsum dolor sit amet')
+    console.log(postES6)
+
+    class AttachedPostES6 extends PostES6 {
+        constructor(text, author) {
+            super(text, author);
+            this.highlighted = false;
+        }
+
+        makeTextHighlighted() {
+            this.highlighted = true;
+        }
+    }
+
+    const attachedPostES6 = new AttachedPostES6('Buba', 'Lorem ipsum dolor sit amet')
+    console.log(attachedPostES6)
+
 </script>
 </body>
 </html>
