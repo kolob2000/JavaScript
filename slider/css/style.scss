@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+}
+
+.slider-item {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+}
+
+.slider_hidden {
+  display: none;
+}
+
+.left {
+  top: 50vh;
+  left: 50px;
+  position: absolute;
+  filter: drop-shadow(2px 4px 6px black);
+}
+
+.right {
+
+  top: 50vh;
+  right: 50px;
+  position: absolute;
+  filter: drop-shadow(2px 4px 6px black);
+
+}
+
+.left:hover {
+  filter: drop-shadow(2px 4px 6px gray);
+}
+
+.right:hover {
+  filter: drop-shadow(2px 4px 6px gray);
+}
+
+.left:active {
+  filter: drop-shadow(2px 4px 6px #3f3e3e);
+}
+
+.right:active {
+  filter: drop-shadow(2px 4px 6px #3f3e3e);
+}
