@@ -76,7 +76,13 @@
     отображенный товар на странице на созданную копию. У данной копии также
     должен правильно работать код из 3-го задания.
      */
-
+    const productEl_4 = document.querySelector('.product').cloneNode(true);
+    productEl_4.querySelector('img').src = 'https://picsum.photos/id/1080/200/300';
+    productEl_4.querySelector('.productName').innerText = 'Товар 4';
+    console.dir(productEl_4);
+    let productEl_3 = document.querySelector('.product:nth-child(3)');
+    console.log(productEl_3);
+    productEl_3.replaceWith(productEl_4);
 
     /*
     5. По истечению 2 секунд с момента открытия страницы первый товар должен быть
