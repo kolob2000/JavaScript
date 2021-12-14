@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Document</title>
+    <link crossorigin="anonymous" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"
+          integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog=="
+          rel="stylesheet"/>
+    <style>
+        i {
+            font-size: 50px;
+        }
+
+        .golden {
+            color: gold;
+        }
+    </style>
+</head>
+<body>
+<!--
+Обязательное задание.
+
+Выполнить все задачи в теге script. Комментарии, в которых написаны задачи, не
+стирать, код с решением задачи пишем под комментарием.
+-->
+
+<div class="stars_container">
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+    <i class="fas fa-star"></i>
+</div>
+
+<script>
+    "use strict";
+
+    /*
+    1. При наведении на любую из звезд, данной звезде должен ставиться класс
+    golden, также такой класс должен ставиться всем звездам до нее слева.
+    */
+    const starEl = document.querySelectorAll('.fa-star');
+
+    for (const i of starEl) {
+        i.addEventListener('mouseover', () => {
+            i.classList.add('golden');
+            if (i.previousElementSibling !== null) {
+                i.previousElementSibling.classList.add('golden')
+            }
+        });
+    }
+    /*
+    2. Когда мы уводим курсор мыши от звезды, все поставленные классы из первого
+    задания должны быть удалены.
+     */
+
+    for (const i of starEl) {
+        i.addEventListener('mouseout', () => {
+            i.classList.remove('golden');
+            if (i.previousElementSibling !== null) {
+                i.previousElementSibling.classList.remove('golden')
+            }
+        });
+    }
+
+
+    /*
+    3. Когда мы переводим мышь от одной звезды к другой, у нас могут мигать
+    звезды (временно могут становиться черными). Почему так? Напишите словами.
+    Можем ли мы это исправить? Если да, то предложите решение.
+    */
+
+    /*
+    потому что между звездами есть ещё нода и мышь сперва появляется над ней
+    и толко потом уходит на следующую звезду. да можем добавить события на соседние ноды
+    с помощью previousSibling, nextSibling.
+    */
+
+</script>
+</body>
+</html>
